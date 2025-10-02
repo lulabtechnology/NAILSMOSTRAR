@@ -1,3 +1,5 @@
+import "./globals.css"; // <<--- IMPORTANTE: carga Tailwind
+
 export const metadata = {
   title: "Nail Booking Demo",
   description: "Reservas y cotización para salón de uñas",
@@ -6,7 +8,7 @@ export const metadata = {
 export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="es">
-      <body>
+      <body className="bg-gray-50 text-gray-900">
         <header className="border-b bg-white">
           <div className="container py-3 flex items-center gap-3">
             <img src="/logo.svg" alt="logo" className="w-7 h-7" />
