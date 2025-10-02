@@ -27,7 +27,8 @@ export async function POST(req: Request) {
       nail_art_level: parsed.nail_art_level,
       nail_art_count: parsed.nail_art_count,
       extras: parsed.extras,
-      imageComplexityScore: parsed.image_complexity_score ?? 1
+      // FIX TS: castear a la unión 0|1|2
+      imageComplexityScore: (parsed.image_complexity_score ?? 1) as 0 | 1 | 2
     });
 
     const public_id = `N-${nanoid(8)}`;
@@ -37,7 +38,7 @@ export async function POST(req: Request) {
       public_id,
       customer_name: parsed.customer_name,
       email: parsed.email,
-      phone: parsed.phone,
+      phone: parsed.phone ?? null,
       appointment_date: parsed.appointment_date,
       appointment_time: parsed.appointment_time,
       service: parsed.service,
