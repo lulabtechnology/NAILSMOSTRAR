@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: light; }
+body { @apply bg-gray-50 text-gray-900; }
+.container { @apply max-w-6xl mx-auto px-4; }
+
+button[disabled] { @apply opacity-50 cursor-not-allowed; }
